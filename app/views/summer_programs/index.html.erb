@@ -1,0 +1,76 @@
+<div class="page-header">
+  <h1>
+    Summer programs
+    <a href="/summer_programs/new" class="btn btn-lg btn-success">New Summer program</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Tuition</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Scholarship information</th>
+        <th>Application fee</th>
+        <th>Academic area</th>
+        <th>Binding</th>
+        <th>Program category</th>
+        <th>Application notes</th>
+        <th>Region</th>
+        <th>Financial aid deadline</th>
+        <th>Minds matter deadline</th>
+        <th>Application</th>
+        <th>Transcript</th>
+        <th>Recommendation letters</th>
+        <th>Sat act</th>
+        <th>Essays</th>
+        <th>Essay topic</th>
+        <th>Resume</th>
+        <th>Gpa min</th>
+        <th>Contact</th>
+        <th>Website</th>
+        <th>International</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @summer_programs.each do |summer_program| %>
+      <tr>
+        <td><%= summer_program.tuition %></td>
+        <td><%= summer_program.description %></td>
+        <td><%= summer_program.location %></td>
+        <td><%= summer_program.start_date %></td>
+        <td><%= summer_program.end_date %></td>
+        <td><%= summer_program.scholarship_information %></td>
+        <td><%= summer_program.application_fee %></td>
+        <td><%= summer_program.academic_area %></td>
+        <td><%= summer_program.binding %></td>
+        <td><%= summer_program.program_category %></td>
+        <td><%= summer_program.application_notes %></td>
+        <td><%= summer_program.region %></td>
+        <td><%= summer_program.financial_aid_deadline %></td>
+        <td><%= summer_program.minds_matter_deadline %></td>
+        <td><%= summer_program.application %></td>
+        <td><%= summer_program.transcript %></td>
+        <td><%= summer_program.recommendation_letters %></td>
+        <td><%= summer_program.sat_act %></td>
+        <td><%= summer_program.essays %></td>
+        <td><%= summer_program.essay_topic %></td>
+        <td><%= summer_program.resume %></td>
+        <td><%= summer_program.gpa_min %></td>
+        <td><%= summer_program.contact %></td>
+        <td><%= summer_program.website %></td>
+        <td><%= summer_program.international %></td>
+        <td>
+          <a href="/summer_programs/<%= summer_program.id %>" class="btn btn-primary">Show</a>
+          <a href="/summer_programs/<%= summer_program.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_summer_program/<%= summer_program.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Scholarship Application #<%= @scholarship_application.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Link to application</dt>
+      <dd><%= @scholarship_application.link_to_application %></dd>
+
+      <dt>Essays</dt>
+      <dd><%= @scholarship_application.essays %></dd>
+
+      <dt>User</dt>
+      <dd><%= @scholarship_application.user_id %></dd>
+
+      <dt>Scholarship amount</dt>
+      <dd><%= @scholarship_application.scholarship_amount %></dd>
+
+      <dt>Application deadline</dt>
+      <dd><%= @scholarship_application.application_deadline %></dd>
+
+      <dt>Summer program</dt>
+      <dd><%= @scholarship_application.summer_program_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/scholarship_applications" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/scholarship_applications/<%= @scholarship_application.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_scholarship_application/<%= @scholarship_application.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

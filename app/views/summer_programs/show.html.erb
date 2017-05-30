@@ -1,0 +1,97 @@
+<div class="page-header">
+  <h3>Summer Program #<%= @summer_program.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Tuition</dt>
+      <dd><%= @summer_program.tuition %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @summer_program.description %></dd>
+
+      <dt>Location</dt>
+      <dd><%= @summer_program.location %></dd>
+
+      <dt>Start date</dt>
+      <dd><%= @summer_program.start_date %></dd>
+
+      <dt>End date</dt>
+      <dd><%= @summer_program.end_date %></dd>
+
+      <dt>Scholarship information</dt>
+      <dd><%= @summer_program.scholarship_information %></dd>
+
+      <dt>Application fee</dt>
+      <dd><%= @summer_program.application_fee %></dd>
+
+      <dt>Academic area</dt>
+      <dd><%= @summer_program.academic_area %></dd>
+
+      <dt>Binding</dt>
+      <dd><%= @summer_program.binding %></dd>
+
+      <dt>Program category</dt>
+      <dd><%= @summer_program.program_category %></dd>
+
+      <dt>Application notes</dt>
+      <dd><%= @summer_program.application_notes %></dd>
+
+      <dt>Region</dt>
+      <dd><%= @summer_program.region %></dd>
+
+      <dt>Financial aid deadline</dt>
+      <dd><%= @summer_program.financial_aid_deadline %></dd>
+
+      <dt>Minds matter deadline</dt>
+      <dd><%= @summer_program.minds_matter_deadline %></dd>
+
+      <dt>Application</dt>
+      <dd><%= @summer_program.application %></dd>
+
+      <dt>Transcript</dt>
+      <dd><%= @summer_program.transcript %></dd>
+
+      <dt>Recommendation letters</dt>
+      <dd><%= @summer_program.recommendation_letters %></dd>
+
+      <dt>Sat act</dt>
+      <dd><%= @summer_program.sat_act %></dd>
+
+      <dt>Essays</dt>
+      <dd><%= @summer_program.essays %></dd>
+
+      <dt>Essay topic</dt>
+      <dd><%= @summer_program.essay_topic %></dd>
+
+      <dt>Resume</dt>
+      <dd><%= @summer_program.resume %></dd>
+
+      <dt>Gpa min</dt>
+      <dd><%= @summer_program.gpa_min %></dd>
+
+      <dt>Contact</dt>
+      <dd><%= @summer_program.contact %></dd>
+
+      <dt>Website</dt>
+      <dd><%= @summer_program.website %></dd>
+
+      <dt>International</dt>
+      <dd><%= @summer_program.international %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/summer_programs" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/summer_programs/<%= @summer_program.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_summer_program/<%= @summer_program.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @scholarship_application.errors.any? %>
+  <% @scholarship_application.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Scholarship Application</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_scholarship_application" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for link_to_application -->
+      <div class="form-group">
+        <label for="link_to_application" class="control-label">
+          Link to application
+        </label>
+
+        <input type="text" id="link_to_application" name="link_to_application" placeholder="Link to application" class="form-control" value="<%= @scholarship_application.link_to_application %>">
+      </div>
+
+      <!-- Label and input for essays -->
+      <div class="form-group">
+        <label for="essays" class="control-label">
+          Essays
+        </label>
+
+        <input type="text" id="essays" name="essays" placeholder="Essays" class="form-control" value="<%= @scholarship_application.essays %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @scholarship_application.user_id %>">
+      </div>
+
+      <!-- Label and input for scholarship_amount -->
+      <div class="form-group">
+        <label for="scholarship_amount" class="control-label">
+          Scholarship amount
+        </label>
+
+        <input type="text" id="scholarship_amount" name="scholarship_amount" placeholder="Scholarship amount" class="form-control" value="<%= @scholarship_application.scholarship_amount %>">
+      </div>
+
+      <!-- Label and input for application_deadline -->
+      <div class="form-group">
+        <label for="application_deadline" class="control-label">
+          Application deadline
+        </label>
+
+        <input type="text" id="application_deadline" name="application_deadline" placeholder="Application deadline" class="form-control" value="<%= @scholarship_application.application_deadline %>">
+      </div>
+
+      <!-- Label and input for summer_program_id -->
+      <div class="form-group">
+        <label for="summer_program_id" class="control-label">
+          Summer program
+        </label>
+
+        <input type="text" id="summer_program_id" name="summer_program_id" placeholder="Summer program" class="form-control" value="<%= @scholarship_application.summer_program_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Scholarship Application
+      </button>
+      or
+      <a href="/scholarship_applications">Cancel</a>
+    </form>
+  </div>
+</div>

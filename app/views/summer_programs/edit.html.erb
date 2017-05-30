@@ -1,0 +1,253 @@
+<!-- Validation failure messages -->
+<% if @summer_program.errors.any? %>
+  <% @summer_program.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Summer Program #<%= @summer_program.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_summer_program/<%= @summer_program.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for tuition -->
+      <div class="form-group">
+        <label for="tuition" class="control-label">
+          Tuition
+        </label>
+
+        <input type="text" id="tuition" name="tuition" placeholder="Tuition" class="form-control" value="<%= @summer_program.tuition %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @summer_program.description %>">
+      </div>
+
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="control-label">
+          Location
+        </label>
+
+        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @summer_program.location %>">
+      </div>
+
+      <!-- Label and input for start_date -->
+      <div class="form-group">
+        <label for="start_date" class="control-label">
+          Start date
+        </label>
+
+        <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @summer_program.start_date %>">
+      </div>
+
+      <!-- Label and input for end_date -->
+      <div class="form-group">
+        <label for="end_date" class="control-label">
+          End date
+        </label>
+
+        <input type="text" id="end_date" name="end_date" placeholder="End date" class="form-control" value="<%= @summer_program.end_date %>">
+      </div>
+
+      <!-- Label and input for scholarship_information -->
+      <div class="form-group">
+        <label for="scholarship_information" class="control-label">
+          Scholarship information
+        </label>
+
+        <input type="text" id="scholarship_information" name="scholarship_information" placeholder="Scholarship information" class="form-control" value="<%= @summer_program.scholarship_information %>">
+      </div>
+
+      <!-- Label and input for application_fee -->
+      <div class="form-group">
+        <label for="application_fee" class="control-label">
+          Application fee
+        </label>
+
+        <input type="text" id="application_fee" name="application_fee" placeholder="Application fee" class="form-control" value="<%= @summer_program.application_fee %>">
+      </div>
+
+      <!-- Label and input for academic_area -->
+      <div class="form-group">
+        <label for="academic_area" class="control-label">
+          Academic area
+        </label>
+
+        <input type="text" id="academic_area" name="academic_area" placeholder="Academic area" class="form-control" value="<%= @summer_program.academic_area %>">
+      </div>
+
+      <!-- Label and input for binding -->
+      <div class="form-group">
+        <label for="binding" class="control-label">
+          Binding
+        </label>
+
+        <input type="text" id="binding" name="binding" placeholder="Binding" class="form-control" value="<%= @summer_program.binding %>">
+      </div>
+
+      <!-- Label and input for program_category -->
+      <div class="form-group">
+        <label for="program_category" class="control-label">
+          Program category
+        </label>
+
+        <input type="text" id="program_category" name="program_category" placeholder="Program category" class="form-control" value="<%= @summer_program.program_category %>">
+      </div>
+
+      <!-- Label and input for application_notes -->
+      <div class="form-group">
+        <label for="application_notes" class="control-label">
+          Application notes
+        </label>
+
+        <input type="text" id="application_notes" name="application_notes" placeholder="Application notes" class="form-control" value="<%= @summer_program.application_notes %>">
+      </div>
+
+      <!-- Label and input for region -->
+      <div class="form-group">
+        <label for="region" class="control-label">
+          Region
+        </label>
+
+        <input type="text" id="region" name="region" placeholder="Region" class="form-control" value="<%= @summer_program.region %>">
+      </div>
+
+      <!-- Label and input for financial_aid_deadline -->
+      <div class="form-group">
+        <label for="financial_aid_deadline" class="control-label">
+          Financial aid deadline
+        </label>
+
+        <input type="text" id="financial_aid_deadline" name="financial_aid_deadline" placeholder="Financial aid deadline" class="form-control" value="<%= @summer_program.financial_aid_deadline %>">
+      </div>
+
+      <!-- Label and input for minds_matter_deadline -->
+      <div class="form-group">
+        <label for="minds_matter_deadline" class="control-label">
+          Minds matter deadline
+        </label>
+
+        <input type="text" id="minds_matter_deadline" name="minds_matter_deadline" placeholder="Minds matter deadline" class="form-control" value="<%= @summer_program.minds_matter_deadline %>">
+      </div>
+
+      <!-- Label and input for application -->
+      <div class="form-group">
+        <label for="application" class="control-label">
+          Application
+        </label>
+
+        <input type="text" id="application" name="application" placeholder="Application" class="form-control" value="<%= @summer_program.application %>">
+      </div>
+
+      <!-- Label and input for transcript -->
+      <div class="form-group">
+        <label for="transcript" class="control-label">
+          Transcript
+        </label>
+
+        <input type="text" id="transcript" name="transcript" placeholder="Transcript" class="form-control" value="<%= @summer_program.transcript %>">
+      </div>
+
+      <!-- Label and input for recommendation_letters -->
+      <div class="form-group">
+        <label for="recommendation_letters" class="control-label">
+          Recommendation letters
+        </label>
+
+        <input type="text" id="recommendation_letters" name="recommendation_letters" placeholder="Recommendation letters" class="form-control" value="<%= @summer_program.recommendation_letters %>">
+      </div>
+
+      <!-- Label and input for sat_act -->
+      <div class="form-group">
+        <label for="sat_act" class="control-label">
+          Sat act
+        </label>
+
+        <input type="text" id="sat_act" name="sat_act" placeholder="Sat act" class="form-control" value="<%= @summer_program.sat_act %>">
+      </div>
+
+      <!-- Label and input for essays -->
+      <div class="form-group">
+        <label for="essays" class="control-label">
+          Essays
+        </label>
+
+        <input type="text" id="essays" name="essays" placeholder="Essays" class="form-control" value="<%= @summer_program.essays %>">
+      </div>
+
+      <!-- Label and input for essay_topic -->
+      <div class="form-group">
+        <label for="essay_topic" class="control-label">
+          Essay topic
+        </label>
+
+        <input type="text" id="essay_topic" name="essay_topic" placeholder="Essay topic" class="form-control" value="<%= @summer_program.essay_topic %>">
+      </div>
+
+      <!-- Label and input for resume -->
+      <div class="form-group">
+        <label for="resume" class="control-label">
+          Resume
+        </label>
+
+        <input type="text" id="resume" name="resume" placeholder="Resume" class="form-control" value="<%= @summer_program.resume %>">
+      </div>
+
+      <!-- Label and input for gpa_min -->
+      <div class="form-group">
+        <label for="gpa_min" class="control-label">
+          Gpa min
+        </label>
+
+        <input type="text" id="gpa_min" name="gpa_min" placeholder="Gpa min" class="form-control" value="<%= @summer_program.gpa_min %>">
+      </div>
+
+      <!-- Label and input for contact -->
+      <div class="form-group">
+        <label for="contact" class="control-label">
+          Contact
+        </label>
+
+        <input type="text" id="contact" name="contact" placeholder="Contact" class="form-control" value="<%= @summer_program.contact %>">
+      </div>
+
+      <!-- Label and input for website -->
+      <div class="form-group">
+        <label for="website" class="control-label">
+          Website
+        </label>
+
+        <input type="text" id="website" name="website" placeholder="Website" class="form-control" value="<%= @summer_program.website %>">
+      </div>
+
+      <!-- Label and input for international -->
+      <div class="form-group">
+        <label for="international" class="control-label">
+          International
+        </label>
+
+        <input type="text" id="international" name="international" placeholder="International" class="form-control" value="<%= @summer_program.international %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Summer Program
+      </button>
+      or
+      <a href="/summer_programs/<%= @summer_program.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

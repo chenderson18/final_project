@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @program_application.errors.any? %>
+  <% @program_application.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Program Application</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_program_application" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for summer_program_id -->
+      <div class="form-group">
+        <label for="summer_program_id" class="control-label">
+          Summer program
+        </label>
+
+        <input type="text" id="summer_program_id" name="summer_program_id" placeholder="Summer program" class="form-control" value="<%= @program_application.summer_program_id %>">
+      </div>
+
+      <!-- Label and input for reason_for_choosing -->
+      <div class="form-group">
+        <label for="reason_for_choosing" class="control-label">
+          Reason for choosing
+        </label>
+
+        <textarea id="reason_for_choosing" name="reason_for_choosing" placeholder="Reason for choosing" class="form-control" rows="3"><%= @program_application.reason_for_choosing %></textarea>
+      </div>
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @program_application.notes %></textarea>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @program_application.user_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Program Application
+      </button>
+      or
+      <a href="/program_applications">Cancel</a>
+    </form>
+  </div>
+</div>
