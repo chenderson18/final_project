@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   # READ
   get "/summer_programs", :controller => "summer_programs", :action => "index"
   get "/summer_programs/:id", :controller => "summer_programs", :action => "show"
-
+  root "summer_programs#index" 
   # UPDATE
   get "/summer_programs/:id/edit", :controller => "summer_programs", :action => "edit"
   post "/update_summer_program/:id", :controller => "summer_programs", :action => "update"
