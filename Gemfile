@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 #claire added the below:
 gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
 gem 'devise'
-
+gem 'bcrypt', platforms: :ruby
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

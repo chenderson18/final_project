@@ -13,9 +13,13 @@ class SummerProgramsController < ApplicationController
 
   def new
     @summer_program = SummerProgram.new
-
+    if current_user.title != "director"
+      redirect_to "/" , notice: "Permission Denied"
+    else
     render("summer_programs/new.html.erb")
+    end
   end
+
 
   def create
     @summer_program = SummerProgram.new
@@ -57,8 +61,11 @@ class SummerProgramsController < ApplicationController
 
   def edit
     @summer_program = SummerProgram.find(params[:id])
-
+    if current_user.title != "director"
+      redirect_to "/" , notice: "Permission Denied"
+    else
     render("summer_programs/edit.html.erb")
+    end
   end
 
   def update
