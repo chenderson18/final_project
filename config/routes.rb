@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # Routes for the Program_application resource:
   # CREATE
   get "/program_applications/new", :controller => "program_applications", :action => "new"
