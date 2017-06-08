@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :applications, :class_name => "ProgramApplication", :dependent => :destroy
   has_many :scholarship_applications, :dependent => :destroy
-  
+
+  mount_uploader :avatar, AvatarUploader
 end

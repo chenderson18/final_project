@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
 gem 'devise'
 gem 'bcrypt', platforms: :ruby
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
