@@ -42,7 +42,11 @@
           Location
         </label>
 
-        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @summer_program.location %>">
+        <select name="location" class="form-control">
+        <% Location.all.each do |location| %>
+        <option value="<%= location.id %>"><%= location.name %><option>
+        <% end %>
+        </select>
       </div>
 
       <!-- Label and input for start_date -->
