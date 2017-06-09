@@ -18,14 +18,7 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for summer_program_id -->
-      <div class="form-group">
-        <label for="summer_program_id" class="control-label">
-          Summer program
-        </label>
-
-        <input type="text" id="summer_program_id" name="summer_program_id" placeholder="Summer program" class="form-control" value="<%= @program_application.summer_program_id %>">
-      </div>
+    
 
       <!-- Label and input for reason_for_choosing -->
       <div class="form-group">
@@ -50,8 +43,12 @@
         <label for="user_id" class="control-label">
           User
         </label>
+        <select name="user_id" class="form-control">
+        <% User.all.each do |user_id| %>
+        <option value="<%= user_id.id %>"><%= user_id.name %><option>
+        <% end %>
+        </select>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @program_application.user_id %>">
       </div>
       <div class="form-group">
         <h5>Add Image of Yourself</h5>
@@ -59,7 +56,7 @@
 
       <input type="file" id="avatar" name="avatar" class="form-control">
       <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
-        
+
       <button class="btn btn-success">
         Create Program Application
       </button>

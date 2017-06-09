@@ -23,7 +23,6 @@ class SummerProgramsController < ApplicationController
 
   def create
     @summer_program = SummerProgram.new
-    @user.avatar = params[:avatar]
     @summer_program.tuition = params[:tuition]
     @summer_program.description = params[:description]
     @summer_program.location = params[:location]
@@ -70,7 +69,6 @@ class SummerProgramsController < ApplicationController
 
   def update
     @summer_program = SummerProgram.find(params[:id])
-    @user.avatar = params[:avatar]
     @summer_program.tuition = params[:tuition]
     @summer_program.description = params[:description]
     @summer_program.location = params[:location]

@@ -9,7 +9,6 @@ namespace :slurp do
     puts row.to_hash
       t = SummerProgram.new
       t.program_category = row["program_category"]
-      t.program = row["program"]
       t.academic_area = row["academic_area"]
       t.application_notes = row["application_notes"]
       t.location = row["location"]
@@ -18,7 +17,6 @@ namespace :slurp do
       t.minds_matter_deadline = row["minds_matter_deadline"]
       t.tuition = row["tuition"]
       t.application_fee = row["application_fee"]
-      t.program_duration = row["program_duration"]
       t.application = row["application"]
       t.transcript = row["transcript"]
       t.recommendation_letters = row["recommendation_letters"]
@@ -26,7 +24,7 @@ namespace :slurp do
       t.resume = row["resume"]
       t.website = row["website"]
       t.save
-      puts "#{t.program_category}, #{t.program}, #{t.academic_area}, #{t.application_notes}, #{t.location}, #{t.region} saved"
+      puts "#{t.program_category}, #{t.academic_area}, #{t.application_notes}, #{t.location}, #{t.region} saved"
       end
 
       puts "There are now #{SummerProgram.count} rows in the summer programs table"

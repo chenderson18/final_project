@@ -24,6 +24,7 @@ class ProgramApplicationsController < ApplicationController
     @program_application.reason_for_choosing = params[:reason_for_choosing]
     @program_application.notes = params[:notes]
     @program_application.user_id = params[:user_id]
+    @user.avatar = params[:avatar]
 
     save_status = @program_application.save
 
@@ -47,6 +48,7 @@ class ProgramApplicationsController < ApplicationController
     @program_application.reason_for_choosing = params[:reason_for_choosing]
     @program_application.notes = params[:notes]
     @program_application.user_id = params[:user_id]
+    @user.avatar = params[:avatar]
 
     save_status = @program_application.save
 

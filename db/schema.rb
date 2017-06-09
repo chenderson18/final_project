@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170608043916) do
   end
 
   create_table "summer_programs", force: :cascade do |t|
+    t.string   "program_category"
+    t.string   "name"
     t.integer  "tuition"
     t.string   "description"
     t.string   "location"
@@ -73,7 +75,6 @@ ActiveRecord::Schema.define(version: 20170608043916) do
     t.integer  "application_fee"
     t.string   "academic_area"
     t.string   "binding"
-    t.string   "program_category"
     t.string   "application_notes"
     t.string   "region"
     t.date     "financial_aid_deadline"
